@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Crear Tarea!{% endblock %}
+
+{% block body %}
+    <h1>Crear Tarea</h1>
+    {% include 'layouts/_message.html.twig' %}
+    {% include 'task/_form.html.twig' with {
+        'action': path('app_create_task' ), 'etiqueta_btn_enviar': 'Guardar'
+    }  %}
+{% endblock %}

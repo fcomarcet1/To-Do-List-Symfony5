@@ -1,0 +1,16 @@
+<form method="POST" action="{{ action }}">
+    <div class="form-group">
+        <label for="description">Descripción</label>
+        <input type="text" class="form-control" id="description" name="description" value="{{ task.description }}"
+               aria-describedby="descripcion" placeholder="Descripción">
+        {#{% if task %}
+            <input type="text" class="form-control" id="description" name="description" value="{{ task.description }}"
+                   aria-describedby="descripcion" placeholder="Descripción">
+        {% else %}
+            <input type="text" class="form-control" id="description" name="description" value=""
+                   aria-describedby="descripcion" placeholder="Descripción">
+        {% endif %}#}
+        <small id="descripcionAyuda" class="form-text text-muted">Descripción de la tarea a realizar.</small>
+    </div>
+    <button type="submit" class="btn btn-primary">{{ etiqueta_btn_enviar|default('Guardar') }}</button>
+</form>

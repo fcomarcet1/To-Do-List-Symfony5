@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Listado de tareas{% endblock %}
+
+{% block body %}
+    <h1>Listado de tareas</h1>
+    {% include 'layouts/_message.html.twig' %}
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for index, task in tasks %}
+            <tr>
+                <th scope="row">{{ index + 1 }}</th>
+                <td>{{ task.description }}</td>
+                <td>
+                   <a href="{{ path('app_edit_task_service-params-convert',{'id':task.id}) }}">Editar</a>
+                    <a href="{{ path('app_delete_task_service', {'id':task.id}) }}">Eliminar</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <th colspan="3" scope="row">No se han encontrado resultados</th>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+
+
+

@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+{% block title %}Editar Tarea.{% endblock %}
+{% block body %}
+    <h1>Editar tarea</h1>
+    {{ dump(task) }}
+    {% include 'layouts/_message.html.twig' %}
+    {% include 'task/_form.html.twig' with {
+        'action': path('app_edit_task',{'id': task.id}), 'etiqueta_btn_enviar': 'Editar'
+    }  %}
+{% endblock %}
+
+
+
